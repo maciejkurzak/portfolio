@@ -9,3 +9,4 @@ gem "bundler", "~> 2.0"
 gem "rake", "~> 12.3"
 gem "jekyll-paginate-v2", "~> 2.0"
 gem "kramdown-parser-gfm", "~> 1.1"
+gem 'github-pages', '~> 226'
