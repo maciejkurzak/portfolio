@@ -2,8 +2,6 @@
 
 A minimalist, responsive portfolio theme for [Jekyll](http://jekyllrb.com/) with Bootstrap.
 
-![preview](preview.jpg)
-
 [See it in action](http://jamigibbs.github.io/phantom/).
 
 ## Fancy using it for your own site?
@@ -12,25 +10,25 @@ Here are some steps to get you started:
 
 1. Clone this repo and cd into the directory:
 
-  ```bash
-  git clone https://github.com/jamigibbs/phantom.git your-dir-name && cd your-dir-name
-  ```
+```bash
+git clone https://github.com/jamigibbs/phantom.git your-dir-name && cd your-dir-name
+```
 
 2. Run:
 
-  ```bash
-  gem install bundler
-  bundle install
-  bundle exec jekyll serve
-  ```
+```bash
+gem install bundler
+bundle install
+bundle exec jekyll serve
+```
 
-  You may need to append your commands with `sudo` if you're getting a permissions error.
+You may need to append your commands with `sudo` if you're getting a permissions error.
 
-  _Don't have Jekyll yet? [Get `er installed then!](http://jekyllrb.com/docs/installation/)_
+_Don't have Jekyll yet? [Get `er installed then!](http://jekyllrb.com/docs/installation/)_
 
 3. Visit in your browser at:
 
-  `http://127.0.0.1:4000`
+`http://127.0.0.1:4000`
 
 ## Launching with Github Pages :rocket:
 
@@ -44,8 +42,8 @@ Navigation can be customized in `_config.yml` under the `nav_item` key. Default 
 
 ```yaml
 nav_item:
-    - { url: '/', text: 'Home' }
-    - { url: '/about', text: 'About' }
+  - { url: '/', text: 'Home' }
+  - { url: '/about', text: 'About' }
 ```
 
 Set the `nav_enable` variable to false in `_config.yml` to disable navigation.
@@ -67,9 +65,7 @@ The template will display a link to click for the contact form modal window:
 Animations with CSS classes are baked into the theme. To animate a section or element, simply add the animation classes:
 
 ```html
-<div id="about-me" class="wow fadeIn">
-  I'm the coolest!
-</div>
+<div id="about-me" class="wow fadeIn">I'm the coolest!</div>
 ```
 
 For a complete list of animations, see the [animation list](http://daneden.github.io/animate.css/).
@@ -90,9 +86,9 @@ Read more about the [pagination plugin](http://jekyllrb.com/docs/pagination/).
 
 ## Credit
 
-* Bootstrap, http://getbootstrap.com/, (C) 2011 - 2016 Twitter, Inc., [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+- Bootstrap, http://getbootstrap.com/, (C) 2011 - 2016 Twitter, Inc., [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-* Wow, https://github.com/matthieua/WOW, (C) 2014 - 2016 Matthieu Aussaguel
-, [GPL](https://github.com/matthieua/WOW#open-source-license)
+- Wow, https://github.com/matthieua/WOW, (C) 2014 - 2016 Matthieu Aussaguel
+  , [GPL](https://github.com/matthieua/WOW#open-source-license)
 
-* Animate.css, https://github.com/daneden/animate.css, (C) 2016 Daniel Eden, [MIT](https://github.com/daneden/animate.css/blob/master/LICENSE)
+- Animate.css, https://github.com/daneden/animate.css, (C) 2016 Daniel Eden, [MIT](https://github.com/daneden/animate.css/blob/master/LICENSE)
