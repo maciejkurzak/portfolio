@@ -13,14 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Hello. I'm Jami Gibbs."
-email: 'jami0821@gmail.com'
-description: "I'm a software developer and designer from Chicago creating useful things for the web."
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jamigibbs.github.io/phantom" # the base hostname & protocol for your site, e.g. https://example.com
-twitter_username: 'jamigibbs'
-github_username: 'jamigibbs'
-medium_username: 'blog.jamigibbs.com'
+title: "Hello. I'm Maciej Kurzak."
+# email: 'jami0821@gmail.com'
+description: "I'm a technical high school student, frontend developer and designer."
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://github.com/maciejkurzak/portfolio' # the base hostname & protocol for your site, e.g. https://example.com
+twitter_username: ''
+github_username: 'maciejkurzak'
+linkedin_username: 'maciejkurzak'
+medium_username: ''
 
 # Build settings
 markdown: kramdown
@@ -32,8 +33,7 @@ plugins:
 # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set
 pagination:
-  
-  # Site-wide kill switch, disabled here it doesn't run at all 
+  # Site-wide kill switch, disabled here it doesn't run at all
   enabled: true
 
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
@@ -47,7 +47,7 @@ pagination:
 
   # The permalink structure for the paginated pages (this can be any level deep)
   permalink: '/page/:num/' # Pages are index.html inside this folder (default)
-  #permalink: '/page/:num.html' # Pages are simple html files 
+  #permalink: '/page/:num.html' # Pages are simple html files
   #permalink: '/page/:num' # Pages are html files, linked jekyll extensionless permalink style.
 
   # Optional the title format for the paginated pages (supports :title for original page title, :num for pagination page number, :max for total number of pages)
@@ -55,7 +55,7 @@ pagination:
 
   # Limit how many pagenated pages to create (default: 0, means all)
   limit: 0
-  
+
   # Optional, defines the field that the posts should be sorted on (omit to default to 'date')
   sort_field: 'date'
 
@@ -68,13 +68,13 @@ pagination:
   # Optional, the default tag to use, omit to disable
   tag: ''
 
-  # Optional, the default locale to use, omit to disable (depends on a field 'locale' to be specified in the posts, 
+  # Optional, the default locale to use, omit to disable (depends on a field 'locale' to be specified in the posts,
   # in reality this can be any value, suggested are the Microsoft locale-codes (e.g. en_US, en_GB) or simply the ISO-639 language code )
-  locale: '' 
+  locale: ''
 
- # Optional,omit or set both before and after to zero to disable. 
- # Controls how the pagination trail for the paginated pages look like. 
-  trail: 
+  # Optional,omit or set both before and after to zero to disable.
+  # Controls how the pagination trail for the paginated pages look like.
+  trail:
     before: 2
     after: 2
 
@@ -89,13 +89,13 @@ pagination:
 ############################################################
 
 ### Phantom settings
-footer_text: '© 2018 Jami Gibbs'
-admin_name: 'Jami Gibbs'
-google_analytics: "UA-9999999-99" # Update with your own tracking ID
+footer_text: '© 2022 Maciej Kurzak'
+admin_name: 'Maciej Kurzak'
+# google_analytics: 'UA-9999999-99' # Update with your own tracking ID
 enable_contact: false
 
 #### Phantom Navigation menu
 enable_nav: true
-nav_item:
-  - { url: '/', text: 'Home' }
-  - { url: '/about', text: 'About' }
+# nav_item:
+#   - { url: '/', text: 'Home' }
+#   - { url: '/about', text: 'About' }

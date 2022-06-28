@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     phantom (0.1.1)
-      jekyll (~> 3.8)
 
 GEM
   remote: https://rubygems.org/
@@ -70,6 +69,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
+  jekyll (~> 3.8)
   jekyll-paginate-v2 (~> 2.0)
   kramdown-parser-gfm (~> 1.1)
   phantom!
