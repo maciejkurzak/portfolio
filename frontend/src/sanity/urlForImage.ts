@@ -3,6 +3,6 @@ import { createImageBuilder } from 'astro-sanity';
 
 export const imageBuilder = createImageBuilder(useSanityClient());
 
-export function urlForImage(source: string) {
+export const urlForImage = (source: string) => {
   return imageBuilder.image(source);
 }

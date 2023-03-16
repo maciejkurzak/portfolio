@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,astro}"
   },
   "dependencies": {
     "@astrojs/react": "^2.1.0",
@@ -17,5 +18,12 @@
     "astro-sanity": "^1.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-astro": "^0.25.0",
+    "typescript": "^5.0.2"
   }
 }
