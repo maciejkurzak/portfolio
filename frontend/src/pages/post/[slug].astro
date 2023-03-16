@@ -3,9 +3,18 @@ import { useSanityClient } from 'astro-sanity';
 import PortableText from '../../components/PortableText.astro';
 
 export async function getStaticPaths() {
-  const posts = await useSanityClient().fetch(`*[_type == "post"]`);
+  const posts = await useSanityClient().fetch(`
+    *[_type == "post"] {
+      slug,
+      asset,
+      title,
+      body,
+      "imageUrl": mainImage.asset->url
+    }
+  `);
 
   return posts.map((post) => {
+    console.log(post)
     return {
       params: {
         slug: post.slug?.current || '',
@@ -15,10 +24,17 @@ export async function getStaticPaths() {
   });
 }
 
-const { title, body } = Astro.props;
+const { title, body, imageUrl } = Astro.props;
 
 ---
+<a href="/">go back</a>
 
 <h1>{title}</h1>
+
+<img src={imageUrl} alt="" style={{
+  maxWidth: '20rem',
+  maxHeight: '20rem',
+}}>
+
 
 <PortableText portableText={body} />
