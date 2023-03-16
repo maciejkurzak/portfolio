@@ -15,8 +15,8 @@ export async function getStaticPaths() {
   `);
 
   return posts.map((post: unknown) => {
-    if (!post || typeof post !== 'object') return;
-    
+    if (!post || typeof post !== 'object') return {};
+
     return {
       params: {
         slug: post.slug?.current || '',
@@ -26,11 +26,13 @@ export async function getStaticPaths() {
   });
 }
 
-const { title, body, description, imageUrl } = Astro.props;
+const {
+  title, body, description, imageUrl,
+} = Astro.props;
 
 const seo = {
   title,
-  description: description,
+  description,
   image: imageUrl,
 };
 

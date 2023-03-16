@@ -2,15 +2,15 @@
 import { useSanityClient } from 'astro-sanity';
 import HtmlWrapper from '../layouts/HtmlWrapper.astro';
 
-const posts = await useSanityClient().fetch(`*[_type == "post"]`);
+const posts = await useSanityClient().fetch('*[_type == "post"]');
 
 ---
 
 <HtmlWrapper>
-	<h1>My blog</h1>
-	{posts && <ul>
-		{posts.map((post) => (
-			<li><a href={`post/${post.slug.current}`}>{post.title}</a></li>
-		))}
-	</ul>}
+  <h1>My blog</h1>
+  {posts && <ul>
+    {posts.map((post) => (
+      <li><a href={`post/${post.slug.current}`}>{post.title}</a></li>
+    ))}
+  </ul>}
 </HtmlWrapper>

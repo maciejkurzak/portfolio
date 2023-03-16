@@ -5,8 +5,7 @@ import { urlForImage } from './urlForImage';
 
 const customComponents = {
   types: {
-    image: ({ value }) => {
-      return `
+    image: ({ value }) => `
         <picture>
           <source
             srcset="${urlForImage(value.asset).format('webp').url()}"
@@ -18,11 +17,10 @@ const customComponents = {
             alt="${value.alt}"
           />
         </picture>
-      `;
-    },
+      `,
   },
 };
 
-export function sanityPortableText(portabletext) {
+export default function sanityPortableText(portabletext) {
   return portableTextToHtml(portabletext, customComponents);
 }

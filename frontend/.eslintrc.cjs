@@ -1,15 +1,18 @@
-/* eslint-disable no-undef */
 module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:astro/recommended',
+    'airbnb-base',
+    'airbnb-typescript/base',
   ],
   plugins: ['@typescript-eslint'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 'latest',
+    tsconfigRootDir: __dirname,
     sourceType: "module",
+    ecmaVersion: 'latest',
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true
     },
@@ -17,6 +20,10 @@ module.exports = {
   env: {
     es6: true,
   },
+  ignorePatterns: [
+    'node_modules',
+    '.eslintrc.cjs'
+  ],
   overrides: [
     {
       // Define the configuration for `.astro` file.
@@ -32,6 +39,7 @@ module.exports = {
       rules: {
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
+        "import/prefer-default-export": "off",
       },
     },
   ],
