@@ -12,7 +12,7 @@ export default defineConfig({
     apiVersion: '2023-03-15',
     useCdn: true,
   }), react()],
-  site: 'http://localhost:3000',
+  site: 'https://maciejkurzak.xyz',
   output: 'server',
   adapter: netlify(),
 });

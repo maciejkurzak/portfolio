@@ -3,6 +3,8 @@ import { useSanityClient } from 'astro-sanity';
 import PortableText from '../../components/PortableText.astro';
 import HtmlWrapper from '../../layouts/HtmlWrapper.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const posts = await useSanityClient().fetch(`
     *[_type == "post"] {
