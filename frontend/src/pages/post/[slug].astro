@@ -3,9 +3,9 @@ import { useSanityClient } from 'astro-sanity';
 import PortableText from '../../components/PortableText.astro';
 import HtmlWrapper from '../../layouts/HtmlWrapper.astro';
 
-export async function getStaticPaths() {
-  const posts = await useSanityClient().fetch(`
-    *[_type == "post"] {
+const fetchPost = async () => {
+  const post = await useSanityClient().fetch(`
+    *[_type == "post" && slug.current == "${Astro.params.slug}"][0] {
       slug,
       asset,
       title,
@@ -14,21 +14,12 @@ export async function getStaticPaths() {
     }
   `);
 
-  return posts.map((post: unknown) => {
-    if (!post || typeof post !== 'object') return {};
-
-    return {
-      params: {
-        slug: post.slug?.current || '',
-      },
-      props: { ...post },
-    };
-  });
-}
+  return post;
+};
 
 const {
   title, body, description, imageUrl,
-} = Astro.props;
+} = await fetchPost();
 
 const seo = {
   title,
