@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sanity from 'astro-sanity';
-
 import react from '@astrojs/react';
+
+import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,4 +13,6 @@ export default defineConfig({
     useCdn: true,
   }), react()],
   site: 'http://localhost:3000',
+  output: 'server',
+  adapter: netlify(),
 });
