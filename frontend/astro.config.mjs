@@ -13,6 +13,6 @@ export default defineConfig({
     useCdn: true,
   }), react()],
   site: 'https://maciejkurzak.xyz',
-  output: 'server',
+  // output: 'server',
   adapter: netlify(),
 });
