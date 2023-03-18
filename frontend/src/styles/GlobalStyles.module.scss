@@ -13,6 +13,7 @@ $gray-12: #141414;
 $gray-13: #000000;
 
 $primary: #096DD9;
+$primary-dark: #00479e;
 
 :export {
   gray1: $gray-1;
@@ -29,6 +30,7 @@ $primary: #096DD9;
   gray12: $gray-12;
   gray13: $gray-13;
   primary: $primary;
+  primaryDark: $primary-dark;
 }
 
 * {

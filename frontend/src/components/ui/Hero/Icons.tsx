@@ -31,16 +31,16 @@ const SIcon = styled.img(({ top, right, rot }: { top: number; right: number, rot
 
 const icons = [
   {
-    src: GitIcon, top: 15, right: 6, rot: -10,
+    src: GitIcon, top: 15, right: 4, rot: -10,
   },
   {
-    src: JsIcon, top: 60, right: 5, rot: -10,
+    src: JsIcon, top: 60, right: 0, rot: -10,
   },
   {
     src: ReactIcon, top: 80, right: 20, rot: 15,
   },
   {
-    src: TsIcon, top: 20, right: 25, rot: 20,
+    src: TsIcon, top: 20, right: 30, rot: 20,
   },
 ];
 
