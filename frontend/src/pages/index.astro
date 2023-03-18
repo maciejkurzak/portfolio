@@ -1,6 +1,7 @@
 ---
 import { useSanityClient } from 'astro-sanity';
 import HtmlWrapper from '../layouts/HtmlWrapper.astro';
+import { Hero } from '../components/ui/Hero';
 
 const posts = await useSanityClient().fetch('*[_type == "post"]');
 
@@ -8,6 +9,7 @@ const posts = await useSanityClient().fetch('*[_type == "post"]');
 
 <HtmlWrapper>
   <h1>My blog</h1>
+  <Hero client:only />
   {posts && <ul>
     {posts.map((post) => (
       <li><a href={`post/${post.slug.current}`}>{post.title}</a></li>

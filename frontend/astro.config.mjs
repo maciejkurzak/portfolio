@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sanity from 'astro-sanity';
 import react from '@astrojs/react';
-
 import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
