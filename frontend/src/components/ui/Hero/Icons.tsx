@@ -1,6 +1,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import { Observer } from 'gsap/Observer';
+import { CustomEase } from 'gsap/CustomEase';
 import styled from 'styled-components';
 
 import GitIcon from '@/assets/logos/git.svg';
@@ -9,6 +10,7 @@ import ReactIcon from '@/assets/logos/react.svg';
 import TsIcon from '@/assets/logos/ts.svg';
 
 gsap.registerPlugin(Observer);
+gsap.registerPlugin(CustomEase);
 
 const SIcons = styled.div`
   position: absolute;
@@ -23,7 +25,8 @@ const SIcon = styled.img(({ top, right, rot }: { top: number; right: number, rot
   position: absolute;
   top: ${top}%;
   right: ${right}%;
-  transform: rotate(${rot}deg) translate(-50%, -50%);
+  rotate: ${rot}deg;
+  transform: translate(-50%, -50%);
 `);
 
 const icons = [
@@ -52,6 +55,7 @@ function Icons() {
           gsap.to(el.target, {
             scale: 1.2,
             rotate: `${Number(el.target.attributes['data-rot'].value) + 15}deg`,
+            ease: 'back.out(2)',
             duration: 0.2,
           });
         },
@@ -59,6 +63,7 @@ function Icons() {
           gsap.to(el.target, {
             scale: 1,
             rotate: `${el.target.attributes['data-rot'].value}deg`,
+            ease: 'back.out(2)',
             duration: 0.2,
           });
         },

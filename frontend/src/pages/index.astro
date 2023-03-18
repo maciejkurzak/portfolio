@@ -8,7 +8,6 @@ const posts = await useSanityClient().fetch('*[_type == "post"]');
 ---
 
 <HtmlWrapper>
-  <h1>My blog</h1>
   <Hero client:only />
   {posts && <ul>
     {posts.map((post) => (

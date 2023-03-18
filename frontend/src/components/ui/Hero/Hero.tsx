@@ -9,13 +9,18 @@ const SHero = styled.div`
   background-color: ${variables.gray11};
   min-height: 70vh;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `;
 
 const SSection = styled.section`
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  width: 100%;
+  height: calc(100% - 10rem);
   max-width: min(50rem, 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const STitle = styled.h1`
@@ -36,6 +41,7 @@ const SDescription = styled.p`
 function Hero() {
   return (
     <SHero>
+      <Icons />
       <SSection>
         <STitle>Hi,</STitle>
         <STitle>I am <span id="accent">Maciej Kurzak</span></STitle>
@@ -46,7 +52,6 @@ function Hero() {
           constantly striving to improve skills and learn new things.
         </SDescription>
       </SSection>
-      <Icons />
     </SHero>
   );
 }
