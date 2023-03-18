@@ -14,17 +14,6 @@ $gray-13: #000000;
 
 $primary: #096DD9;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Space Grotesk', sans-serif;
-  background-color: $gray-12;
-}
-
 :export {
   gray1: $gray-1;
   gray2: $gray-2;
@@ -40,4 +29,15 @@ body {
   gray12: $gray-12;
   gray13: $gray-13;
   primary: $primary;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: $gray-12;
 }
