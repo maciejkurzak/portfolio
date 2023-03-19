@@ -1,9 +1,9 @@
 const settings = {
-  title: 'Maciej Kurzak - Portfolio',
-  description: 'Portfolio',
-  url: '', // No trailing slash!
+  title: "Maciej Kurzak - Portfolio",
+  description: "Portfolio",
+  url: "", // No trailing slash!
   // JSON LD
-  name: 'Example',
+  name: "Example",
 };
 
 export default settings;

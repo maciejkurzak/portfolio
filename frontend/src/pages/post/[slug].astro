@@ -1,7 +1,7 @@
 ---
-import { useSanityClient } from 'astro-sanity';
-import PortableText from '../../components/PortableText.astro';
-import HtmlWrapper from '../../layouts/HtmlWrapper.astro';
+import { useSanityClient } from "astro-sanity";
+import PortableText from "../../components/PortableText.astro";
+import HtmlWrapper from "../../layouts/HtmlWrapper.astro";
 
 const fetchPost = async () => {
   const post = await useSanityClient().fetch(`
@@ -17,29 +17,28 @@ const fetchPost = async () => {
   return post;
 };
 
-const {
-  title, body, description, imageUrl,
-} = await fetchPost();
+const { title, body, description, imageUrl } = await fetchPost();
 
 const seo = {
   title,
   description,
   image: imageUrl,
 };
-
 ---
 
 <HtmlWrapper seo={seo}>
-
   <a href="/">go back</a>
 
   <h1>{title}</h1>
 
-  <img src={imageUrl} alt="" style={{
-    maxWidth: '20rem',
-    maxHeight: '20rem',
-  }}>
+  <img
+    src={imageUrl}
+    alt=""
+    style={{
+      maxWidth: "20rem",
+      maxHeight: "20rem",
+    }}
+  />
 
-<PortableText portableText={body} />
-
+  <PortableText portableText={body} />
 </HtmlWrapper>

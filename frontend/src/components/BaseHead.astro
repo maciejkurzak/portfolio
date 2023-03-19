@@ -1,5 +1,5 @@
 ---
-import settings from '../data/settings';
+import settings from "../data/settings";
 
 export interface Props {
   title?: string;
@@ -11,21 +11,26 @@ export interface Props {
 const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const image = new URL(Astro.props.image || './social.png', Astro.site);
-
+const image = new URL(Astro.props.image || "./social.png", Astro.site);
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
 <meta name="generator" content={Astro.generator} />
 
 <!-- favicon -->
 <link rel="icon" type="image/svg" href="/favicon.svg" />
 
 <!-- fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -33,13 +38,18 @@ const image = new URL(Astro.props.image || './social.png', Astro.site);
 <meta name="description" content={description} />
 
 <!-- settingsmap -->
-<link rel="settingsmap" href="/settingsmap.xml">
+<link rel="settingsmap" href="/settingsmap.xml" />
 
 <!-- RSS -->
-<link rel="alternate" type="application/rss+xml" title={`${settings.name} Blog`} href={`${settings.url}/feed/blog.xml`}/>
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={`${settings.name} Blog`}
+  href={`${settings.url}/feed/blog.xml`}
+/>
 
 <!-- Canonical -->
-<link rel="canonical" href={canonicalUrl}>
+<link rel="canonical" href={canonicalUrl} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

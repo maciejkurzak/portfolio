@@ -1,4 +1,4 @@
-import { useSanityClient, createImageBuilder } from 'astro-sanity';
+import { useSanityClient, createImageBuilder } from "astro-sanity";
 
 export const imageBuilder = createImageBuilder(useSanityClient());
 

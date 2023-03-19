@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { IconMessage2, IconFileDownload } from '@tabler/icons-react';
-import variables from '@/styles/GlobalStyles.module.scss';
-import Icons from './Icons.tsx';
-import Button from '../Button.tsx';
+import React from "react";
+import styled from "styled-components";
+import { IconMessage2, IconFileDownload } from "@tabler/icons-react";
+import variables from "@/styles/GlobalStyles.module.scss";
+import Icons from "./Icons.tsx";
+import Button from "../Button.tsx";
 
 const SHero = styled.div`
   color: ${variables.gray5};
@@ -65,16 +65,27 @@ function Hero() {
         <Icons />
         <SSection>
           <STitle>Hi,</STitle>
-          <STitle>I am <span id="accent">Maciej Kurzak</span></STitle>
+          <STitle>
+            I am <span id="accent">Maciej Kurzak</span>
+          </STitle>
           <SDescription>
-            Junior Frontend Engineer with a passion for building web applications
-            using modern technologies such as TypeScript and React
-            that loves creativity and problem-solving involved in web development,
-            constantly striving to improve skills and learn new things.
+            Junior Frontend Engineer with a passion for building web
+            applications using modern technologies such as TypeScript and React
+            that loves creativity and problem-solving involved in web
+            development, constantly striving to improve skills and learn new
+            things.
           </SDescription>
           <SButtons>
-            <Button variant="solid" href="#projects" icon={<IconMessage2 />}>Get in touch</Button>
-            <Button variant="outline" onClick={() => console.log('123')} icon={<IconFileDownload />}>Download CV</Button>
+            <Button variant="solid" href="#projects" icon={<IconMessage2 />}>
+              Get in touch
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => console.log("123")}
+              icon={<IconFileDownload />}
+            >
+              Download CV
+            </Button>
           </SButtons>
         </SSection>
       </SMain>

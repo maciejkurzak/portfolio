@@ -8,10 +8,8 @@ module.exports = {
     'plugin:prettier/recommended',
     "plugin:react/recommended",
     "plugin:astro/recommended",
-    "tslint:latest",
-    "tslint-config-prettier",
   ],
-  plugins: ['@typescript-eslint', 'prettier', 'react'],
+  plugins: ['@typescript-eslint', 'prettier', 'react', 'import'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     tsconfigRootDir: __dirname,
@@ -34,8 +32,18 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",
     "spaced-comment": "error",
-    "quotes": ["error", "single"],
-    "no-duplicate-imports": "error"
+    // "quotes": ["error", "single"],
+    "no-duplicate-imports": "error",
+    "import/extensions": "off",
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src'],
+        ],
+      },
+    },
   },
   overrides: [
     {
@@ -51,8 +59,9 @@ module.exports = {
       },
       rules: {
         // override/add rules settings here, such as:
-        "astro/no-set-html-directive": "error",
+        // "astro/no-set-html-directive": "error",
         "import/prefer-default-export": "off",
+        "react/jsx-key": "off",
       },
     },
   ],

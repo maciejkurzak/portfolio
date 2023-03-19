@@ -1,15 +1,13 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import type { Props as BaseHeadProps } from '../components/BaseHead.astro';
+import BaseHead, { Props as BaseHeadProps } from "../components/BaseHead.astro";
 
-import '../styles/GlobalStyles.module.scss';
+import "../styles/GlobalStyles.module.scss";
 
 export interface Props {
   seo?: BaseHeadProps;
 }
 
 const { seo } = Astro.props as Props;
-
 ---
 
 <html lang="en">

@@ -1,14 +1,14 @@
 // /my-blog/frontend/src/sanity/portableText.js
 
-import { portableTextToHtml } from 'astro-sanity';
-import { urlForImage } from './urlForImage';
+import { portableTextToHtml } from "astro-sanity";
+import { urlForImage } from "./urlForImage";
 
 const customComponents = {
   types: {
     image: ({ value }) => `
         <picture>
           <source
-            srcset="${urlForImage(value.asset).format('webp').url()}"
+            srcset="${urlForImage(value.asset).format("webp").url()}"
             type="image/webp"
           />
           <img

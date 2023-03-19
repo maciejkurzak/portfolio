@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import variables from '@/styles/GlobalStyles.module.scss';
+import type React from "react";
+import styled from "styled-components";
+import variables from "@/styles/GlobalStyles.module.scss";
 
-type Variant = 'solid' | 'outline';
+type Variant = "solid" | "outline";
 
 interface Props {
   href?: string;
@@ -12,16 +12,17 @@ interface Props {
   icon?: React.ReactNode;
 }
 
-const SButton = styled.a(({ variant }: { variant: Variant }) => `
+const SButton = styled.a(
+  ({ variant }: { variant: Variant }) => `
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 10000px;
-  background-color: ${variant === 'solid' ? variables.primary : 'transparent'};
+  background-color: ${variant === "solid" ? variables.primary : "transparent"};
   color: ${variables.gray1};
-  border: ${variant === 'solid' ? 'none' : `1px solid ${variables.gray1}`};
+  border: ${variant === "solid" ? "none" : `1px solid ${variables.gray1}`};
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
@@ -29,37 +30,39 @@ const SButton = styled.a(({ variant }: { variant: Variant }) => `
   text-decoration: none;
   white-space: nowrap;
   &:hover {
-    background-color: ${variant === 'solid' ? variables.primaryDark : variables.gray1};
-    color: ${variant === 'solid' ? variables.gray1 : variables.gray12};
+    background-color: ${
+      variant === "solid" ? variables.primaryDark : variables.gray1
+    };
+    color: ${variant === "solid" ? variables.gray1 : variables.gray12};
   }
-`);
+`
+);
 
 const SIcon = styled.span`
-    stroke-width: 1.25;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .tabler-icon {
-      width: 1.2rem;
-      height: 1.2rem;
-    }
+  stroke-width: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .tabler-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 `;
 
-function Button({
-  href, onClick, variant = 'solid', children, icon,
-}: Props) {
+function Button({ href, onClick, variant = "solid", children, icon }: Props) {
   return (
-  <SButton
-    href={href || ''}
-    onClick={(e) => {
-      e.preventDefault();
-      if (!onClick) return;
-      onClick();
-    }}
-    variant={variant}>
-    <span>{children}</span>
-    <SIcon>{icon}</SIcon>
-  </SButton>
+    <SButton
+      href={href || ""}
+      onClick={(e) => {
+        e.preventDefault();
+        if (!onClick) return;
+        onClick();
+      }}
+      variant={variant}
+    >
+      <span>{children}</span>
+      <SIcon>{icon}</SIcon>
+    </SButton>
   );
 }
 
