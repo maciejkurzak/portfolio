@@ -27,6 +27,7 @@ const SButton = styled.a(({ variant }: { variant: Variant }) => `
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  white-space: nowrap;
   &:hover {
     background-color: ${variant === 'solid' ? variables.primaryDark : variables.gray1};
     color: ${variant === 'solid' ? variables.gray1 : variables.gray12};

@@ -18,6 +18,7 @@ const SIcons = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
+  z-index: -1;
 `;
 
 const SIcon = styled.img(({ top, right, rot }: { top: number; right: number, rot: number }) => `

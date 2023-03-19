@@ -10,29 +10,29 @@ const SHero = styled.div`
   margin: 60px;
   min-height: 70vh;
   position: relative;
-`;
-
-const SMain = styled.main`
-  position: absolute;
-  max-width: 1320px;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   border-bottom: 2px solid ${variables.gray8};
 `;
 
+const SMain = styled.main`
+  margin: 0 auto;
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const SSection = styled.section`
-position: absolute;
   width: 100%;
   height: 100%;
   max-width: min(50rem, 60%);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 60px 0;
 `;
 
 const STitle = styled.h1`
@@ -55,6 +55,7 @@ const SButtons = styled.div`
   margin-top: 1rem;
   flex-direction: row;
   gap: 1rem;
+  flex-wrap: wrap;
 `;
 
 function Hero() {
