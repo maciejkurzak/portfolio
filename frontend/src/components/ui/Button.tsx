@@ -53,15 +53,14 @@ function Button({ href, onClick, variant = "solid", children, icon }: Props) {
   return (
     <SButton
       href={href || ""}
-      onClick={(e) => {
-        e.preventDefault();
+      onClick={() => {
         if (!onClick) return;
         onClick();
       }}
       variant={variant}
     >
       <span>{children}</span>
-      <SIcon>{icon}</SIcon>
+      {icon && <SIcon>{icon}</SIcon>}
     </SButton>
   );
 }

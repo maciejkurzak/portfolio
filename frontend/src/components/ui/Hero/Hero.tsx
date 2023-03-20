@@ -33,6 +33,7 @@ const SSection = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: 60px 0;
+  z-index: 1;
 `;
 
 const STitle = styled.h1`
