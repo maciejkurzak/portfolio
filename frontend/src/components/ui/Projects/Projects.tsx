@@ -9,7 +9,7 @@ const SProjects = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 60px;
+  margin: 60px;
 `;
 
 const SWrapper = styled.div`
@@ -23,7 +23,9 @@ const SWrapper = styled.div`
 
 const STitle = styled.h1`
   font-size: 2rem;
-  margin: 60px 0 30px 0;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: ${variables.gray1};
 `;
 
 const SGrid = styled.div`
@@ -36,32 +38,30 @@ const SGrid = styled.div`
   }
 `;
 
-function Projects() {
+function Projects({ projects }: { projects: unknown }) {
   return (
     <SProjects>
       <SWrapper>
         <STitle>Projects</STitle>
         <SGrid>
-          <Tile
-            width={11}
-            title="Project 1"
-            description="Project 1 description"
-          />
-          <Tile
+          {projects &&
+            projects.map((project, i) => {
+              console.log(project);
+              return (
+                <Tile
+                  key={i}
+                  width={[0, 3].includes(i % 4) ? 13 : 11}
+                  title={project.title}
+                  description={project.description}
+                  href={`post/${project.slug.current}`}
+                />
+              );
+            })}
+          {/* <Tile
             width={13}
             title="Project 2"
             description="Project 2 description"
-          />
-          <Tile
-            width={13}
-            title="Project 2"
-            description="Project 2 description"
-          />
-          <Tile
-            width={11}
-            title="Project 2"
-            description="Project 2 description"
-          />
+          /> */}
         </SGrid>
       </SWrapper>
     </SProjects>

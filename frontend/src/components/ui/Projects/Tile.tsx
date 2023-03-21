@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import variables from "@/styles/GlobalStyles.module.scss";
 
-const STile = styled.div(
+const STile = styled.a(
   ({ width }: { width?: number }) => `
   padding: 1rem;
   border-radius: 0.5rem;
@@ -16,13 +16,33 @@ const STile = styled.div(
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
   @media (max-width: 900px) {
     grid-column: span 1;
+  }
+  transition: transform 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.01);
   }
 `
 );
 
-const STileButton = styled.a`
+const STileTitle = styled.h2`
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: ${variables.gray1};
+`;
+
+const STileDescription = styled.p`
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: ${variables.gray5};
+`;
+
+const STileIcon = styled.p`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -43,18 +63,20 @@ function Tile({
   width,
   title,
   description,
+  href,
 }: {
   width?: number;
   title: string;
   description: string;
+  href: string;
 }) {
   return (
-    <STile width={width}>
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <STileButton href="#">
+    <STile width={width} href={href}>
+      <STileTitle>{title}</STileTitle>
+      <STileDescription>{description}</STileDescription>
+      <STileIcon>
         <IconArrowUpRight />
-      </STileButton>
+      </STileIcon>
     </STile>
   );
 }
