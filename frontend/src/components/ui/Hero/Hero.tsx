@@ -5,9 +5,9 @@ import variables from "@/styles/GlobalStyles.module.scss";
 import Icons from "./Icons.tsx";
 import Button from "../Button.tsx";
 
-const SHero = styled.div`
+const SHero = styled.section`
   color: ${variables.gray5};
-  margin: 60px;
+  margin: 0 60px;
   min-height: 70vh;
   position: relative;
   display: flex;
@@ -16,7 +16,7 @@ const SHero = styled.div`
   border-bottom: 2px solid ${variables.gray8};
 `;
 
-const SMain = styled.main`
+const SWrapper = styled.div`
   margin: 0 auto;
   max-width: 1320px;
   width: 100%;
@@ -25,7 +25,7 @@ const SMain = styled.main`
   justify-content: center;
 `;
 
-const SSection = styled.section`
+const SContent = styled.div`
   width: 100%;
   height: 100%;
   max-width: min(50rem, 60%);
@@ -62,9 +62,9 @@ const SButtons = styled.div`
 function Hero() {
   return (
     <SHero>
-      <SMain>
+      <SWrapper>
         <Icons />
-        <SSection>
+        <SContent>
           <STitle>Hi,</STitle>
           <STitle>
             I am <span id="accent">Maciej Kurzak</span>
@@ -88,8 +88,8 @@ function Hero() {
               Download CV
             </Button>
           </SButtons>
-        </SSection>
-      </SMain>
+        </SContent>
+      </SWrapper>
     </SHero>
   );
 }

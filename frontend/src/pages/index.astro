@@ -1,8 +1,9 @@
 ---
 import { useSanityClient } from "astro-sanity";
 import HtmlWrapper from "../layouts/HtmlWrapper.astro";
-import Hero from "../components/ui/Hero";
+import Hero from "@/components/ui/Hero";
 import Navbar from "@/components/ui/Navbar";
+import Projects from "@/components/ui/Projects";
 
 const posts = await useSanityClient().fetch('*[_type == "post"]');
 ---
@@ -10,6 +11,7 @@ const posts = await useSanityClient().fetch('*[_type == "post"]');
 <HtmlWrapper>
   <Navbar client:only />
   <Hero client:only />
+  <Projects client:only />
   {
     posts && (
       <ul>
