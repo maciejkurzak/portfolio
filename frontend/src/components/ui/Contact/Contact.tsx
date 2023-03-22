@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { IconSend } from "@tabler/icons-react";
 import variables from "@/styles/GlobalStyles.module.scss";
+import Info from "./Info";
 
 const SContact = styled.section`
   max-width: 1440px;
@@ -39,6 +40,7 @@ const STitle = styled.h1`
 const SFlex = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 5rem;
   @media (max-width: 900px) {
     flex-direction: column;
   }
@@ -124,10 +126,6 @@ const SButton = styled.button`
   }
 `;
 
-const SInfo = styled.div``;
-
-const SInfoItem = styled.div``;
-
 function Contact() {
   return (
     <SContact>
@@ -146,11 +144,7 @@ function Contact() {
               <IconSend />
             </SButton>
           </SForm>
-          <SInfo>
-            <SInfoItem></SInfoItem>
-            <SInfoItem></SInfoItem>
-            <SInfoItem></SInfoItem>
-          </SInfo>
+          <Info />
         </SFlex>
       </SWrapper>
     </SContact>
