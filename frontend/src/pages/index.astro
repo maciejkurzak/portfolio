@@ -4,6 +4,7 @@ import HtmlWrapper from "../layouts/HtmlWrapper.astro";
 import Hero from "@/components/ui/Hero";
 import Navbar from "@/components/ui/Navbar";
 import Projects from "@/components/ui/Projects";
+import Contact from "@/components/ui/Contact";
 
 const posts = await useSanityClient().fetch(`
   *[_type == "project"] {
@@ -13,7 +14,6 @@ const posts = await useSanityClient().fetch(`
     title,
     body,
     "imageUrl": mainImage.asset->url,
-    mainImage
   }
 `);
 ---
@@ -22,6 +22,7 @@ const posts = await useSanityClient().fetch(`
   <Navbar client:only />
   <Hero client:only />
   <Projects projects={posts} client:only />
+  <Contact client:only />
   <!-- {
     posts && (
       <ul>

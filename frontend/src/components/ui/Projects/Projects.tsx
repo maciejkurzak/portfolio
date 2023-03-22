@@ -45,19 +45,16 @@ function Projects({ projects }: { projects: unknown }) {
         <STitle>Projects</STitle>
         <SGrid>
           {projects &&
-            projects.map((project, i) => {
-              console.log(project.mainImage);
-              return (
-                <Tile
-                  key={i}
-                  width={[0, 3].includes(i % 4) ? 13 : 11}
-                  title={project.title}
-                  description={project.description}
-                  image={project.imageUrl}
-                  href={`post/${project.slug.current}`}
-                />
-              );
-            })}
+            projects.map((project, i) => (
+              <Tile
+                key={i}
+                width={[0, 3].includes(i % 4) ? 13 : 11}
+                title={project.title}
+                description={project.description}
+                image={project.imageUrl}
+                href={`post/${project.slug.current}`}
+              />
+            ))}
           {/* <Tile
             width={13}
             title="Project 2"
