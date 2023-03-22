@@ -5,7 +5,7 @@ import HtmlWrapper from "../../layouts/HtmlWrapper.astro";
 
 const fetchPost = async () => {
   const post = await useSanityClient().fetch(`
-    *[_type == "post" && slug.current == "${Astro.params.slug}"][0] {
+    *[_type == "project" && slug.current == "${Astro.params.slug}"][0] {
       slug,
       asset,
       title,

@@ -4,14 +4,14 @@ import { IconArrowUpRight } from "@tabler/icons-react";
 import variables from "@/styles/GlobalStyles.module.scss";
 
 const STile = styled.a(
-  ({ width }: { width?: number }) => `
+  ({ width, image }: { width?: number; image: string }) => `
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   height: max(40vw, 15rem);
   grid-column: span ${width || 1};
   background-color: ${variables.gray8};
-  background-image: url("https://picsum.photos/1000/800");
+  background-image: url(${image});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,15 +63,17 @@ function Tile({
   width,
   title,
   description,
+  image,
   href,
 }: {
   width?: number;
   title: string;
   description: string;
+  image: string;
   href: string;
 }) {
   return (
-    <STile width={width} href={href}>
+    <STile width={width} href={href} image={image}>
       <STileTitle>{title}</STileTitle>
       <STileDescription>{description}</STileDescription>
       <STileIcon>

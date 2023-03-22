@@ -46,13 +46,14 @@ function Projects({ projects }: { projects: unknown }) {
         <SGrid>
           {projects &&
             projects.map((project, i) => {
-              console.log(project);
+              console.log(project.mainImage);
               return (
                 <Tile
                   key={i}
                   width={[0, 3].includes(i % 4) ? 13 : 11}
                   title={project.title}
                   description={project.description}
+                  image={project.imageUrl}
                   href={`post/${project.slug.current}`}
                 />
               );

@@ -5,7 +5,17 @@ import Hero from "@/components/ui/Hero";
 import Navbar from "@/components/ui/Navbar";
 import Projects from "@/components/ui/Projects";
 
-const posts = await useSanityClient().fetch('*[_type == "post"]');
+const posts = await useSanityClient().fetch(`
+  *[_type == "project"] {
+    slug,
+    description,
+    asset,
+    title,
+    body,
+    "imageUrl": mainImage.asset->url,
+    mainImage
+  }
+`);
 ---
 
 <HtmlWrapper>
