@@ -55,11 +55,6 @@ function Projects({ projects }: { projects: unknown }) {
                 href={`post/${project.slug.current}`}
               />
             ))}
-          {/* <Tile
-            width={13}
-            title="Project 2"
-            description="Project 2 description"
-          /> */}
         </SGrid>
       </SWrapper>
     </SProjects>

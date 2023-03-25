@@ -5,7 +5,6 @@ import variables from "@/styles/GlobalStyles.module.scss";
 
 const STile = styled.a(
   ({ width, image }: { width?: number; image: string }) => `
-  padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   height: max(40vw, 15rem);
@@ -17,9 +16,8 @@ const STile = styled.a(
   background-repeat: no-repeat;
   position: relative;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
   text-decoration: none;
+  overflow: hidden;
   @media (max-width: 900px) {
     grid-column: span 1;
   }
@@ -29,6 +27,16 @@ const STile = styled.a(
   }
 `
 );
+
+const SOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+`;
 
 const STileTitle = styled.h2`
   font-size: 1.6rem;
@@ -74,11 +82,14 @@ function Tile({
 }) {
   return (
     <STile width={width} href={href} image={image}>
+      <SOverlay>
+
       <STileTitle>{title}</STileTitle>
       <STileDescription>{description}</STileDescription>
       <STileIcon>
         <IconArrowUpRight />
       </STileIcon>
+      </SOverlay>
     </STile>
   );
 }
