@@ -40,8 +40,9 @@ const STitle = styled.h1`
 const SFlex = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 5rem;
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
   }
 `;

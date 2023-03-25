@@ -12,10 +12,10 @@ const SInfo = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
   width: 50%;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const SInfoItem = styled.a(
@@ -27,6 +27,18 @@ const SInfoItem = styled.a(
   border: 1px solid ${variables.gray8};
   grid-column: span ${span || 1};
   position: relative;
+  word-break: break-word;
+  :hover {
+    background-color: ${variables.gray8};
+    .icon {
+      svg {
+        transform: translate(15%, -15%);
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    grid-column: span 2;
+  }
 `
 );
 
@@ -48,14 +60,15 @@ const SText = styled.p`
 `;
 
 const SLinkIcon = styled.div`
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
   width: 2rem;
   height: 2rem;
+  align-self: flex-end;
+  margin-top: 0.5rem;
+
   svg {
     width: inherit;
     height: inherit;
+    transition: transform 0.2s ease-in-out;
   }
 `;
 
@@ -67,7 +80,7 @@ function Info() {
           <IconBrandLinkedin />
         </SIcon>
         <SText>/maciejkurzak</SText>
-        <SLinkIcon>
+        <SLinkIcon className={"icon"}>
           <IconArrowUpRight />
         </SLinkIcon>
       </SInfoItem>
@@ -76,7 +89,7 @@ function Info() {
           <IconBrandGithub />
         </SIcon>
         <SText>/maciejkurzak</SText>
-        <SLinkIcon>
+        <SLinkIcon className={"icon"}>
           <IconArrowUpRight />
         </SLinkIcon>
       </SInfoItem>
@@ -85,7 +98,7 @@ function Info() {
           <IconAt />
         </SIcon>
         <SText>maciejkurzak@pm.me</SText>
-        <SLinkIcon>
+        <SLinkIcon className={"icon"}>
           <IconArrowUpRight />
         </SLinkIcon>
       </SInfoItem>
