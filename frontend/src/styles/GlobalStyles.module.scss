@@ -37,9 +37,11 @@ $primary-dark: #00479e;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Space Grotesk', sans-serif;
   background-color: $gray-12;
+  user-select: none;
 }

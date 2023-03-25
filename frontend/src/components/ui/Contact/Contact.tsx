@@ -129,7 +129,7 @@ const SButton = styled.button`
 
 function Contact() {
   return (
-    <SContact>
+    <SContact id="contact">
       <SWrapper>
         <STitle>Get in touch</STitle>
         <SFlex>

@@ -40,7 +40,7 @@ const SGrid = styled.div`
 
 function Projects({ projects }: { projects: unknown }) {
   return (
-    <SProjects>
+    <SProjects id="projects">
       <SWrapper>
         <STitle>Projects</STitle>
         <SGrid>

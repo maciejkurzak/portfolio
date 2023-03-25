@@ -61,7 +61,7 @@ const SButtons = styled.div`
 
 function Hero() {
   return (
-    <SHero>
+    <SHero id="about">
       <SWrapper>
         <Icons />
         <SContent>
