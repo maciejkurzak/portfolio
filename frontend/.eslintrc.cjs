@@ -45,6 +45,7 @@ module.exports = {
       },
     },
   },
+  extraFileExtensions: ['.astro'],
   overrides: [
     {
       // Define the configuration for `.astro` file.
@@ -62,6 +63,7 @@ module.exports = {
         // "astro/no-set-html-directive": "error",
         "import/prefer-default-export": "off",
         "react/jsx-key": "off",
+
       },
     },
   ],

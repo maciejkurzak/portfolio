@@ -6,6 +6,7 @@ import variables from "@/styles/GlobalStyles.module.scss";
 
 const SNavbar = styled.nav`
   display: flex;
+  gap: 2rem;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -42,10 +43,10 @@ function Navbar() {
   return (
     <SNavbar>
       <SLinks>
-        <Link to="#about">About</Link>
-        <Link to="#projects">Projects</Link>
+        <Link to="/#about">About</Link>
+        <Link to="/#projects">Projects</Link>
       </SLinks>
-      <Button href="#contact" icon={<IconMessage2 />}>
+      <Button href="/#contact" icon={<IconMessage2 />}>
         Get in touch
       </Button>
     </SNavbar>

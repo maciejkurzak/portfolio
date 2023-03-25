@@ -1,7 +1,8 @@
 ---
 import { useSanityClient } from "astro-sanity";
-import PortableText from "../../components/PortableText.astro";
 import HtmlWrapper from "../../layouts/HtmlWrapper.astro";
+import Navbar from "@/components/ui/Navbar";
+import ProjectPost from "@/components/ui/ProjectPost";
 
 const fetchPost = async () => {
   const post = await useSanityClient().fetch(`
@@ -27,18 +28,6 @@ const seo = {
 ---
 
 <HtmlWrapper seo={seo}>
-  <a href="/">go back</a>
-
-  <h1>{title}</h1>
-
-  <img
-    src={imageUrl}
-    alt=""
-    style={{
-      maxWidth: "20rem",
-      maxHeight: "20rem",
-    }}
-  />
-
-  <PortableText portableText={body} />
+  <Navbar client:only />
+  <ProjectPost title={title} body={body} imageUrl={imageUrl} />
 </HtmlWrapper>
