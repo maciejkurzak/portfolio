@@ -28,6 +28,8 @@ const SInfoItem = styled.a(
   grid-column: span ${span || 1};
   position: relative;
   word-break: break-word;
+  color: white;
+  text-decoration: none;
   :hover {
     background-color: ${variables.gray8};
     .icon {
