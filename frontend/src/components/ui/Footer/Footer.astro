@@ -1,0 +1,99 @@
+---
+import variables from "@/styles/GlobalStyles.module.scss";
+import AstroIcon from "@/assets/logos/astro.svg";
+import ReactIcon from "@/assets/logos/react.svg";
+import SanityIcon from "@/assets/logos/sanity.svg";
+
+const technologies = [
+  {
+    name: "Astro",
+    logo: AstroIcon,
+    url: "https://astro.build/",
+  },
+  {
+    name: "React",
+    logo: ReactIcon,
+    url: "https://react.dev/",
+  },
+  {
+    name: "Sanity",
+    logo: SanityIcon,
+    url: "https://sanity.io/",
+  },
+];
+
+---
+<style define:vars={variables} lang="scss">
+  footer {
+    color: var(--gray7);
+    font-size: 0.8rem;
+    margin: 60px 60px 0 60px;
+    .wrapper {
+      margin: 0 auto;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-top: 1px solid var(--gray8);
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 1rem;
+        li {
+          a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--gray7);
+            transition: color 0.2s ease-in-out;
+            &:hover {
+              color: var(--gray6);
+            }
+          }
+          img {
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<footer>
+  <div class="wrapper">
+    <div>
+      Built with:
+      <ul>
+        {
+          technologies.map(technology => (
+            <li>
+              <a href={technology.url} target="_blank" rel="noreferrer">
+                <img src={technology.logo} alt={`${technology.name} logo`} />
+                <span>{technology.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <p>
+      Copyright © 2023 Maciej Kurzak. All rights reserved.
+    </p>
+  </div>
+</footer>

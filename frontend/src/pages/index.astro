@@ -5,6 +5,7 @@ import Hero from "@/components/ui/Hero";
 import Navbar from "@/components/ui/Navbar";
 import Projects from "@/components/ui/Projects";
 import Contact from "@/components/ui/Contact";
+import Footer from "@/components/ui/Footer";
 
 const posts = await useSanityClient().fetch(`
   *[_type == "project"] {
@@ -23,6 +24,7 @@ const posts = await useSanityClient().fetch(`
   <Hero client:only />
   <Projects projects={posts} client:only />
   <Contact client:only />
+  <Footer />
   <!-- {
     posts && (
       <ul>
