@@ -9,6 +9,14 @@ export interface Props {
 
 const { seo } = Astro.props as Props;
 ---
+<style lang="scss">
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+</style>
 
 <html lang="en">
   <head>
