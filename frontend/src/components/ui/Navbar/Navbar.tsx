@@ -5,13 +5,17 @@ import Button from "../Button";
 import variables from "@/styles/GlobalStyles.module.scss";
 
 const SNavbar = styled.nav`
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: ${variables.gray10};
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 `;
 
 const SLinks = styled.ul`

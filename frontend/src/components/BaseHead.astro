@@ -1,4 +1,5 @@
 ---
+import { AstroComponentInstance } from "astro/dist/runtime/server";
 import settings from "../data/settings";
 
 export interface Props {
@@ -8,7 +9,7 @@ export interface Props {
   image?: string;
 }
 
-const title = Astro.props.title || settings.title;
+const title = Astro.props.title ? `${Astro.props.title} - Maciej Kurzak` : settings.title;
 const description = Astro.props.description || settings.description;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const image = new URL(Astro.props.image || "./social.png", Astro.site);

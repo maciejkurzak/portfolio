@@ -14,6 +14,7 @@ const SHero = styled.section`
   flex-direction: column;
   justify-content: center;
   border-bottom: 2px solid ${variables.gray8};
+  padding-top: 5rem;
 `;
 
 const SWrapper = styled.div`
@@ -23,6 +24,7 @@ const SWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 `;
 
 const SContent = styled.div`
