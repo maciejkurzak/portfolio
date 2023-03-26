@@ -75,7 +75,7 @@ const SLinkIcon = styled.div`
 function Info() {
   return (
     <SInfo>
-      <SInfoItem>
+      <SInfoItem href="https://www.linkedin.com/in/maciejkurzak/" target="_blank" rel="noreferrer">
         <SIcon>
           <IconBrandLinkedin />
         </SIcon>
@@ -84,7 +84,7 @@ function Info() {
           <IconArrowUpRight />
         </SLinkIcon>
       </SInfoItem>
-      <SInfoItem>
+      <SInfoItem href="https://github.com/maciejkurzak" target="_blank" rel="noreferrer">
         <SIcon>
           <IconBrandGithub />
         </SIcon>
@@ -93,7 +93,7 @@ function Info() {
           <IconArrowUpRight />
         </SLinkIcon>
       </SInfoItem>
-      <SInfoItem span={2}>
+      <SInfoItem span={2} href="mailto:maciejkurzak@pm.me" target="_blank" rel="noreferrer">
         <SIcon>
           <IconAt />
         </SIcon>
