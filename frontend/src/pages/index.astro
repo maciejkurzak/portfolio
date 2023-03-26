@@ -6,6 +6,7 @@ import Navbar from "@/components/ui/Navbar";
 import Projects from "@/components/ui/Projects";
 import Contact from "@/components/ui/Contact";
 import Footer from "@/components/ui/Footer";
+import { urlForImage } from "@/sanity/urlForImage";
 
 const posts = await useSanityClient().fetch(`
   *[_type == "project"] {
@@ -14,9 +15,14 @@ const posts = await useSanityClient().fetch(`
     asset,
     title,
     body,
-    "imageUrl": mainImage.asset->url,
+    'image': mainImage.asset,
   }
 `);
+
+posts.forEach((post) => {
+  post.imageUrl = urlForImage(post.image).width(500).auto("format").url();
+});
+
 ---
 
 <HtmlWrapper>
