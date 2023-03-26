@@ -35,24 +35,28 @@ const SIcon = styled.img(
 const icons = [
   {
     src: GitIcon,
+    alt: "git",
     top: 15,
     right: 4,
     rot: -10,
   },
   {
     src: JsIcon,
+    alt: "js",
     top: 60,
     right: 0,
     rot: -10,
   },
   {
     src: ReactIcon,
+    alt: "react",
     top: 80,
     right: 20,
     rot: 15,
   },
   {
     src: TsIcon,
+    alt: "ts",
     top: 20,
     right: 30,
     rot: 20,
@@ -98,6 +102,7 @@ function Icons() {
           rot={icon.rot}
           src={icon.src}
           data-rot={icon.rot}
+          alt={`${icon.alt} icon`}
         />
       ))}
     </SIcons>
