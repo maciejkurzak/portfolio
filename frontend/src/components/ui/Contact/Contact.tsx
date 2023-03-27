@@ -6,6 +6,7 @@ import Info from "./Info";
 
 const SContact = styled.section`
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto 60px auto;
   color: ${variables.gray5};
   position: relative;
