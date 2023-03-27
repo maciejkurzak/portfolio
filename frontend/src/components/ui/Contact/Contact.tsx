@@ -128,22 +128,21 @@ const SButton = styled.button`
   }
 `;
 
-const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
-  event.preventDefault();
+// const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+//   event.preventDefault();
+//   event.preventDefault();
 
-  const myForm = event.target;
-  const formData = new FormData(myForm as HTMLFormElement);
+//   const myForm = event.target;
+//   const formData = new FormData(myForm as HTMLFormElement);
   
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
-};
-  
+//   fetch("/", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+//     body: new URLSearchParams(formData).toString(),
+//   })
+//     .then(() => console.log("Form successfully submitted"))
+//     .catch((error) => alert(error));
+// };
 
 function Contact() {
   return (
@@ -159,7 +158,7 @@ function Contact() {
             <SInput type="email" name="email" placeholder="Email" />
             <SLabel>Message</SLabel>
             <STextarea rows={8} name="message" />
-            <SButton onSubmit={submitForm}>
+            <SButton type="submit">
               <span>Send</span>
               <IconSend />
             </SButton>
