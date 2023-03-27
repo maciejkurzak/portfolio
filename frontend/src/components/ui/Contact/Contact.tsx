@@ -14,6 +14,7 @@ const SContact = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0 120px;
+  width: 100%;
   @media (max-width: 900px) {
     max-width: 100%;
     padding: 0 60px;
@@ -47,7 +48,7 @@ const SFlex = styled.div`
   }
 `;
 
-const SForm = styled.div`
+const SForm = styled.form`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 50%;
@@ -127,20 +128,38 @@ const SButton = styled.button`
   }
 `;
 
+const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm as HTMLFormElement);
+  
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
+  
+
 function Contact() {
   return (
     <SContact id="contact">
       <SWrapper>
         <STitle>Get in touch</STitle>
         <SFlex>
-          <SForm>
+          <SForm method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
             <SLabel>Name</SLabel>
-            <SInput type="text" placeholder="Name" />
+            <SInput type="name" name="name" placeholder="Name" />
             <SLabel>Email</SLabel>
-            <SInput type="email" placeholder="Email" />
+            <SInput type="email" name="email" placeholder="Email" />
             <SLabel>Message</SLabel>
-            <STextarea rows={8} />
-            <SButton>
+            <STextarea rows={8} name="message" />
+            <SButton onSubmit={submitForm}>
               <span>Send</span>
               <IconSend />
             </SButton>
