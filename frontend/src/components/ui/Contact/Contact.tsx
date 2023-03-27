@@ -152,7 +152,7 @@ function Contact() {
       <SWrapper>
         <STitle>Get in touch</STitle>
         <SFlex>
-          <SForm method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact" onSubmit={submitForm}>
+          <form method="POST" netlify="" data-netlify="true" netlify-honeypot="bot-field" name="contact" onSubmit={submitForm}>
             <input type="hidden" name="form-name" value="contact" />
             <SLabel>Name</SLabel>
             <SInput type="name" name="name" placeholder="Name" />
@@ -164,7 +164,7 @@ function Contact() {
               <span>Send</span>
               <IconSend />
             </SButton>
-          </SForm>
+          </form>
           <Info />
         </SFlex>
       </SWrapper>
