@@ -24,11 +24,17 @@ posts.forEach((post) => {
   post.imageUrl = urlForImage(post.image).width(500).auto("format").url();
 });
 
+const downloadLink = await useSanityClient().fetch(`
+  *[_type == 'cv'] {
+    "url": file.asset->url
+  }
+`).then((res) => `${res[0].url}?dl=`)
+
 ---
 
 <HtmlWrapper>
   <Navbar client:only />
-  <Hero client:only />
+  <Hero client:only downloadLink={downloadLink} />
   <Projects projects={posts} client:only />
   <Contact client:only />
   <Footer />

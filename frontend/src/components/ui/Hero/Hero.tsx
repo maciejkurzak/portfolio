@@ -61,7 +61,9 @@ const SButtons = styled.div`
   flex-wrap: wrap;
 `;
 
-function Hero() {
+function Hero({downloadLink}: {
+  downloadLink: string;
+}) {
   return (
     <SHero id="about">
       <SWrapper>
@@ -84,7 +86,8 @@ function Hero() {
             </Button>
             <Button
               variant="outline"
-              onClick={() => console.log("123")}
+              href={downloadLink}
+              target="_blank"
               icon={<IconFileDownload />}
             >
               Download CV

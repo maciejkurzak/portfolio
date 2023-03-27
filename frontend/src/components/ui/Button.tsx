@@ -6,6 +6,8 @@ type Variant = "solid" | "outline";
 
 interface Props {
   href?: string;
+  target?: string;
+  rel?: string;
   onClick?: () => void;
   variant?: Variant;
   children: string;
@@ -49,10 +51,12 @@ const SIcon = styled.span`
   }
 `;
 
-function Button({ href, onClick, variant = "solid", children, icon }: Props) {
+function Button({ href, target, rel, onClick, variant = "solid", children, icon }: Props) {
   return (
     <SButton
       href={href || ""}
+      target={target || "_self"}
+      rel={rel || "noopener noreferrer"}
       onClick={() => {
         if (!onClick) return;
         onClick();
