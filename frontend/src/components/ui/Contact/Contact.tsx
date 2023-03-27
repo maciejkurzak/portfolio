@@ -14,7 +14,6 @@ const SContact = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0 120px;
-  width: 100%;
   @media (max-width: 900px) {
     max-width: 100%;
     padding: 0 60px;
@@ -128,23 +127,28 @@ const SButton = styled.button`
   }
 `;
 
-const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
 
 
-  console.log(event.target)
-
-  const myForm = event.target;
-  const formData = new FormData(myForm);
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => alert("thank-you"))
-    .catch((error) => alert(error));
-};
+<form name="contact" method="POST" data-netlify="true">
+<p>
+  <label>Your Name: <input type="text" name="name" /></label>
+</p>
+<p>
+  <label>Your Email: <input type="email" name="email" /></label>
+</p>
+<p>
+  <label>Your Role: <select name="role[]" multiple>
+    <option value="leader">Leader</option>
+    <option value="follower">Follower</option>
+  </select></label>
+</p>
+<p>
+  <label>Message: <textarea name="message"></textarea></label>
+</p>
+<p>
+  <button type="submit">Send</button>
+</p>
+</form>
 
 function Contact() {
   return (
@@ -152,19 +156,18 @@ function Contact() {
       <SWrapper>
         <STitle>Get in touch</STitle>
         <SFlex>
-          <form method="POST" netlify="" data-netlify="true" netlify-honeypot="bot-field" name="contact" onSubmit={submitForm}>
-            <input type="hidden" name="form-name" value="contact" />
+          <SForm method="POST" data-netlify="true">
             <SLabel>Name</SLabel>
-            <SInput type="name" name="name" placeholder="Name" />
+            <SInput type="text" placeholder="Name" />
             <SLabel>Email</SLabel>
-            <SInput type="email" name="email" placeholder="Email" />
+            <SInput type="email" placeholder="Email" />
             <SLabel>Message</SLabel>
-            <STextarea rows={8} name="message" />
-            <SButton type="submit">
+            <STextarea rows={8} />
+            <SButton>
               <span>Send</span>
               <IconSend />
             </SButton>
-          </form>
+          </SForm>
           <Info />
         </SFlex>
       </SWrapper>
