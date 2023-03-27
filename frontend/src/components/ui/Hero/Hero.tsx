@@ -79,7 +79,7 @@ function Hero() {
             things.
           </SDescription>
           <SButtons>
-            <Button variant="solid" href="#projects" icon={<IconMessage2 />}>
+            <Button variant="solid" href="#contact" icon={<IconMessage2 />}>
               Get in touch
             </Button>
             <Button
