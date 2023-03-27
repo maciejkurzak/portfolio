@@ -128,21 +128,23 @@ const SButton = styled.button`
   }
 `;
 
-// const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
-//   event.preventDefault();
-//   event.preventDefault();
+const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
 
-//   const myForm = event.target;
-//   const formData = new FormData(myForm as HTMLFormElement);
-  
-//   fetch("/", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//     body: new URLSearchParams(formData).toString(),
-//   })
-//     .then(() => console.log("Form successfully submitted"))
-//     .catch((error) => alert(error));
-// };
+
+  console.log(event.target)
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => alert("thank-you"))
+    .catch((error) => alert(error));
+};
 
 function Contact() {
   return (
@@ -150,7 +152,7 @@ function Contact() {
       <SWrapper>
         <STitle>Get in touch</STitle>
         <SFlex>
-          <SForm method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact">
+          <SForm method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact" onSubmit={submitForm}>
             <input type="hidden" name="form-name" value="contact" />
             <SLabel>Name</SLabel>
             <SInput type="name" name="name" placeholder="Name" />
