@@ -1,6 +1,5 @@
 import type React from "react";
 import styled from "styled-components";
-import { IconMessage2 } from "@tabler/icons-react";
 import Button from "../Button";
 import variables from "@/styles/GlobalStyles.module.scss";
 
@@ -50,7 +49,7 @@ function Navbar() {
         <Link to="/#about">About</Link>
         <Link to="/#projects">Projects</Link>
       </SLinks>
-      <Button href="/#contact" icon={<IconMessage2 />}>
+      <Button href="/#contact" icon="message-2">
         Get in touch
       </Button>
     </SNavbar>

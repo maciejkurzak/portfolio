@@ -1,3 +1,3 @@
-import Hero from "./Hero.tsx";
+import Hero from "./Hero.astro";
 
 export default Hero;

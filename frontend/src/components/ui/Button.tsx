@@ -11,7 +11,7 @@ interface Props {
   onClick?: () => void;
   variant?: Variant;
   children: string;
-  icon?: React.ReactNode;
+  icon?: string;
 }
 
 const SButton = styled.a(
@@ -64,7 +64,7 @@ function Button({ href, target, rel, onClick, variant = "solid", children, icon 
       variant={variant}
     >
       <span>{children}</span>
-      {icon && <SIcon>{icon}</SIcon>}
+      {icon && <SIcon><i className={`ti ti-${icon}`}></i></SIcon>}
     </SButton>
   );
 }
