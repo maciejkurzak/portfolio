@@ -1,2 +1,2 @@
-[functions]
-  external_node_modules = ["svgo"]
+# [functions]
+#   external_node_modules = ["svgo"]
