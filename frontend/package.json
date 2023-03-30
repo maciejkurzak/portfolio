@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^2.2.0",
+    "@astrojs/prefetch": "^0.2.1",
     "@astrojs/react": "^2.1.0",
     "@iconify/react": "^4.1.0",
     "@tabler/icons-react": "^2.10.0",

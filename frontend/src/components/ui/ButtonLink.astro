@@ -63,7 +63,7 @@ const {
   class:list={['button', variant && `button-${variant}`]}
   href={href || ""}
   target={target || "_self"}
-  rel={rel || "noopener noreferrer"}
+  rel={rel ? `${rel} prefetch` : "noopener noreferrer prefetch"}
 >
   <span>
     <slot />

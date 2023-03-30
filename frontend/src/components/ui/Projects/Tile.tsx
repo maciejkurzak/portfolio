@@ -81,7 +81,7 @@ function Tile({
   href: string;
 }) {
   return (
-    <STile width={width} href={href} image={image}>
+    <STile width={width} href={href} image={image} rel="noopener noreferrer prefetch">
       <SOverlay>
 
       <STileTitle>{title}</STileTitle>
