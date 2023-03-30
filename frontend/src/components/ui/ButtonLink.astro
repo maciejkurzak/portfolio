@@ -43,17 +43,6 @@ const {
       }
     }
   }
-
-  .icon {
-    stroke-width: 1.25;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg {
-      width: 1.2rem;
-      height: 1.2rem;
-    }
-  }
 </style>
 
 
@@ -69,8 +58,6 @@ const {
     <slot />
   </span>
   {icon && (
-      <p class="icon">
-        <Icon client:only icon={`tabler:${icon}`} />
-      </p>
+    <Icon client:visible icon={`tabler:${icon}`} height={'1.2rem'} />
   )}
 </a>
