@@ -159,12 +159,12 @@ function Contact() {
         <SFlex>
           <SForm method="POST" data-netlify="true">
             <SLabel>Name</SLabel>
-            <SInput name="name" type="text" placeholder="Name" />
+            <SInput name="name" type="text" placeholder="Name" aria-label="Name" />
             <SLabel>Email</SLabel>
-            <SInput name="email" type="email" placeholder="Email" />
+            <SInput name="email" type="email" placeholder="Email" aria-label="Email" />
             <SLabel>Message</SLabel>
-            <STextarea name="message" rows={8} />
-            <SButton>
+            <STextarea name="message" aria-label="Message" rows={8} />
+            <SButton aria-label="Send">
               <span>Send</span>
               <IconSend />
             </SButton>
