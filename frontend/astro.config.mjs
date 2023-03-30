@@ -17,7 +17,7 @@ export default defineConfig({
   adapter: netlify(),
   vite: {
     ssr: {
-      external: ["astro", "svgo"]
+      external: ["svgo"]
     }
   }
 });
