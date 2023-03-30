@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sanity from 'astro-sanity';
 import react from '@astrojs/react';
 import netlify from '@astrojs/netlify/functions';
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +11,7 @@ export default defineConfig({
     dataset: 'production',
     apiVersion: '2023-03-15',
     useCdn: true,
-  }), react()],
+  }), react(), compress()],
   site: 'https://maciejkurzak.xyz',
   output: 'server',
   adapter: netlify(),
