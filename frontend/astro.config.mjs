@@ -15,9 +15,4 @@ export default defineConfig({
   site: 'https://maciejkurzak.xyz',
   output: 'server',
   adapter: netlify(),
-  vite: {
-    ssr: {
-      external: ["svgo"]
-    }
-  }
 });

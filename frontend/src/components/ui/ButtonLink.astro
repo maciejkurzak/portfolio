@@ -1,6 +1,6 @@
 ---
 import variables from "@/styles/GlobalStyles.module.scss";
-import { Sprite } from 'astro-icon'
+import { Icon } from '@iconify/react';
 
 const {
   href,
@@ -56,6 +56,9 @@ const {
   }
 </style>
 
+
+
+
 <a
   class:list={['button', variant && `button-${variant}`]}
   href={href || ""}
@@ -66,10 +69,8 @@ const {
     <slot />
   </span>
   {icon && (
-    <Sprite.Provider>
       <p class="icon">
-        <Sprite name={`tabler:${icon}`}/>
+        <Icon client:only icon={`tabler:${icon}`} />
       </p>
-    </Sprite.Provider>
   )}
 </a>
