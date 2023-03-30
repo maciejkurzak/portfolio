@@ -34,7 +34,7 @@ const downloadLink = await useSanityClient().fetch(`
 <HtmlWrapper>
   <!-- TODO: Rewrite react components to astro -->
   <Navbar client:only />
-  <Hero />
+  <Hero downloadLink={downloadLink} />
   <Projects projects={posts} client:only />
   <Contact client:only />
   <Footer />

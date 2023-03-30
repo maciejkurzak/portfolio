@@ -1,8 +1,11 @@
 ---
-import Button from "../Button.tsx";
+import ButtonLink from "../ButtonLink.astro";
 import variables from "@/styles/GlobalStyles.module.scss";
 import Icons from "./Icons.tsx";
+
+const { downloadLink } = Astro.props;
 ---
+
 <style define:vars={variables} lang="scss" >
   .hero {
     color: var(--gray5);
@@ -77,18 +80,16 @@ import Icons from "./Icons.tsx";
         things.
       </p>
       <div class="buttons">
-        <Button client:only variant="solid" href="#contact" icon="message-2">
+        <ButtonLink  variant="solid" href="#contact" icon="message-2">
           Get in touch
-        </Button>
-        <Button
-          client:only
-          variant="outline"
-          href={''}
+        </ButtonLink>
+        <ButtonLink
+          href={downloadLink}
           target="_blank"
           icon="file-download"
         >
           Download CV
-        </Button>
+        </ButtonLink>
       </div>
     </div>
   </div>

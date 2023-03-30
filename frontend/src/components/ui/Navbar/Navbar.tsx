@@ -1,6 +1,5 @@
-import type React from "react";
 import styled from "styled-components";
-import Button from "../Button";
+// import ButtonLink from "../ButtonLink";
 import variables from "@/styles/GlobalStyles.module.scss";
 
 const SNavbar = styled.nav`
@@ -49,9 +48,9 @@ function Navbar() {
         <Link to="/#about">About</Link>
         <Link to="/#projects">Projects</Link>
       </SLinks>
-      <Button href="/#contact" icon="message-2">
+      {/* <ButtonLink href="/#contact" icon="message-2">
         Get in touch
-      </Button>
+      </ButtonLink> */}
     </SNavbar>
   );
 }

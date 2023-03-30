@@ -1,0 +1,75 @@
+---
+import variables from "@/styles/GlobalStyles.module.scss";
+import { Sprite } from 'astro-icon'
+
+const {
+  href,
+  target,
+  rel,
+  variant,
+  icon
+} = Astro.props;
+---
+
+<style define:vars={{...variables, variant: 'solid'}} lang="scss">
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10000px;
+    color: var(--gray1);
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    white-space: nowrap;
+    
+    background-color: transparent;
+    border: 1px solid var(--gray1);
+    &:hover {
+      background-color: var(--gray1);
+      color: var(--gray12);
+    }
+
+    &-solid {
+      background-color: var(--primary);
+      border: none;
+      &:hover {
+        background-color: var(--primaryDark);
+        color: var(--gray1);
+      }
+    }
+  }
+
+  .icon {
+    stroke-width: 1.25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+</style>
+
+<a
+  class:list={['button', variant && `button-${variant}`]}
+  href={href || ""}
+  target={target || "_self"}
+  rel={rel || "noopener noreferrer"}
+>
+  <span>
+    <slot />
+  </span>
+  {icon && (
+    <Sprite.Provider>
+      <p class="icon">
+        <Sprite name={`tabler:${icon}`}/>
+      </p>
+    </Sprite.Provider>
+  )}
+</a>
