@@ -1,0 +1,13 @@
+diff --git a/node_modules/astro-icon/lib/utils.ts b/node_modules/astro-icon/lib/utils.ts
+index daa2485..5e7187c 100644
+--- a/node_modules/astro-icon/lib/utils.ts
++++ b/node_modules/astro-icon/lib/utils.ts
+@@ -2,7 +2,7 @@
+ import { SPRITESHEET_NAMESPACE } from "./constants";
+ import { Props, Optimize } from "./Props";
+ import getFromService from "./resolver";
+-import { optimize as optimizeSVGNative } from "svgo";
++import { optimize as optimizeSVGNative } from "svgo/dist/svgo.browser";
+ 
+ // Adapted from https://github.com/developit/htmlParser
+ const splitAttrsTokenizer = /([a-z0-9_\:\-]*)\s*?=\s*?(['"]?)(.*?)\2\s+/gim;
