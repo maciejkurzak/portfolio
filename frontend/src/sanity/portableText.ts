@@ -11,7 +11,7 @@ const customComponents = {
             srcset="${urlForImage(value.asset).format("webp").url()}"
             type="image/webp"
           />
-          <img
+          <img style="max-width: 100%; max-height: 60vh; border-radius: 1rem;"
             class="responsive__img"
             src="${urlForImage(value.asset).url()}"
             alt="${value.alt}"
