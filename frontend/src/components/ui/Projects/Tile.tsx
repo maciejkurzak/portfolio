@@ -7,7 +7,7 @@ const STile = styled.a(
   ({ width, image }: { width?: number; image: string }) => `
   border-radius: 0.5rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  height: max(40vw, 15rem);
+  height: max(60vh, 15rem);
   grid-column: span ${width || 1};
   background-color: ${variables.gray8};
   background-image: url(${image});
@@ -21,10 +21,17 @@ const STile = styled.a(
   @media (max-width: 900px) {
     grid-column: span 1;
   }
-  transition: transform 0.2s ease-in-out;
   :hover {
-    transform: scale(1.01);
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .icon {
+      svg {
+        transform: translate(15%, -15%);
+      }
+    }
   }
+  
 `
 );
 
@@ -36,6 +43,7 @@ const SOverlay = styled.div`
   flex-direction: column;
   position: relative;
   padding: 1rem;
+  transition: background-color 0.2s ease-in-out;
 `;
 
 const STileTitle = styled.h2`
@@ -57,13 +65,13 @@ const STileIcon = styled.p`
   width: 2rem;
   height: 2rem;
   color: ${variables.gray5};
-  transition: color 0.2s ease-in-out;
   &:hover {
     color: ${variables.gray1};
   }
   svg {
     width: inherit;
     height: inherit;
+    transition: transform 0.2s ease-in-out;
   }
 `;
 
@@ -82,11 +90,11 @@ function Tile({
 }) {
   return (
     <STile width={width} href={href} image={image} rel="noopener noreferrer prefetch">
-      <SOverlay>
+      <SOverlay className="overlay">
 
       <STileTitle>{title}</STileTitle>
       <STileDescription>{description}</STileDescription>
-      <STileIcon>
+      <STileIcon className="icon">
         <IconArrowUpRight />
       </STileIcon>
       </SOverlay>

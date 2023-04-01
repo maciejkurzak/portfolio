@@ -48,7 +48,7 @@ function Projects({ projects }: { projects: unknown }) {
             projects.map((project, i) => (
               <Tile
                 key={i}
-                width={[0, 3].includes(i % 4) ? 13 : 11}
+                width={i === (projects.length -1) ? 24 : [0, 3].includes(i % 4) ? 13 : 11}
                 title={project.title}
                 description={project.description}
                 image={project.imageUrl}
