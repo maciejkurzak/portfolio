@@ -4,6 +4,7 @@ import HtmlWrapper from "../../layouts/HtmlWrapper.astro";
 import Navbar from "@/components/ui/Navbar";
 import ProjectPost from "@/components/ui/ProjectPost";
 import Footer from "@/components/ui/Footer";
+import "@/styles/portableText.scss";
 
 const fetchPost = async () => {
   const post = await useSanityClient().fetch(`

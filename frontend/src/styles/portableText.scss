@@ -1,0 +1,19 @@
+@import "./GlobalStyles.module.scss";
+
+.portable-text-link {
+  color: $primary;
+  text-decoration: none;
+  border-bottom: 1px solid $primary;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $primary-dark;
+    border-bottom: 1px solid $primary-dark;
+  }
+}
+
+.portable-text-img {
+  max-width: 100%;
+  max-height: 60vh;
+  border-radius: 1rem;
+}

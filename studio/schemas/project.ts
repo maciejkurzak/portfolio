@@ -24,7 +24,7 @@ export default defineType({
       title: 'Description',
       type: 'string',
       validation: (Rule) => [
-        Rule.max(200).warning(`Shouldn't be more than 200 characters`),
+        Rule.max(300).warning(`Shouldn't be more than 300 characters`),
         Rule.required().warning(`Shouldn't be empty`),
       ],
     }),
