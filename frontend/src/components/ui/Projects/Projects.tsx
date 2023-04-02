@@ -38,7 +38,7 @@ const SGrid = styled.div`
   }
 `;
 
-function Projects({ projects }: { projects: unknown }) {
+function Projects({ projects }: { projects: Array<any> }) {
   return (
     <SProjects id="projects">
       <SWrapper>
@@ -48,7 +48,7 @@ function Projects({ projects }: { projects: unknown }) {
             projects.map((project, i) => (
               <Tile
                 key={i}
-                width={i === (projects.length -1) ? 24 : [0, 3].includes(i % 4) ? 13 : 11}
+                width={(projects.length % 2 === 1 && i === (projects.length -1)) ? 24 : [0, 3].includes(i % 4) ? 13 : 11}
                 title={project.title}
                 description={project.description}
                 image={project.imageUrl}

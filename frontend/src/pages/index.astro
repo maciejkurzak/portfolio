@@ -20,7 +20,7 @@ const posts = await useSanityClient().fetch(`
 `);
 
 posts.forEach((post) => {
-  post.imageUrl = urlForImage(post.image).width(500).auto("format").url();
+  post.imageUrl = urlForImage(post.image).width(800).auto("format").url();
 });
 
 const downloadLink = await useSanityClient().fetch(`
