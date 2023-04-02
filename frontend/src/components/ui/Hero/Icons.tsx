@@ -17,18 +17,22 @@ const SIcons = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 100%;
+  width: 50%;
   z-index: 0;
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const SIcon = styled.img(
-  ({ top, right, rot }: { top: number; right: number; rot: number }) => `
+  ({ top, right, rot, color }: { top: number; right: number; rot: number; color: string }) => `
   width: 5rem;
   position: absolute;
   top: ${top}%;
   right: ${right}%;
   rotate: ${rot}deg;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 0.5rem ${color}80);
 `
 );
 
@@ -37,8 +41,9 @@ const icons = [
     src: GitIcon,
     alt: "git",
     top: 15,
-    right: 4,
+    right: 8,
     rot: -10,
+    color: "#DE4C36",
   },
   {
     src: JsIcon,
@@ -46,20 +51,23 @@ const icons = [
     top: 60,
     right: 0,
     rot: -10,
+    color: "#F7DF1E",
   },
   {
     src: ReactIcon,
     alt: "react",
     top: 80,
-    right: 20,
+    right: 40,
     rot: 15,
+    color: "#149ECA",
   },
   {
     src: TsIcon,
     alt: "ts",
     top: 20,
-    right: 30,
+    right: 60,
     rot: 20,
+    color: "#3178C6",
   },
 ];
 
@@ -97,10 +105,7 @@ function Icons() {
           className="icon"
           ref={(element) => element && elRef.current.push(element)}
           key={i}
-          top={icon.top}
-          right={icon.right}
-          rot={icon.rot}
-          src={icon.src}
+          {...icon}
           data-rot={icon.rot}
           alt={`${icon.alt} icon`}
         />

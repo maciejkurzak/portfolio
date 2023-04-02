@@ -39,6 +39,9 @@ const { downloadLink } = Astro.props;
     justify-content: center;
     margin: 60px 0;
     z-index: 1;
+    @media (max-width: 900px) {
+      max-width: 100%;
+    }
   }
 
   .title {
