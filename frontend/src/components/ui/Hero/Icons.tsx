@@ -1,5 +1,5 @@
 import React from "react";
-import { gsap } from "gsap";
+import { Sine, gsap } from "gsap";
 import { Observer } from "gsap/Observer";
 import { CustomEase } from "gsap/CustomEase";
 import styled from "styled-components";
@@ -71,11 +71,49 @@ const icons = [
   },
 ];
 
+
+const random = (min: number, max: number) => {
+  const delta = max - min;
+  return (direction = 1) => (min + delta * Math.random()) * direction;
+};
+
+const randomX = random(1, 15);
+const randomY = random(1, 15);
+const randomTime = random(3, 5);
+
+const moveX = (target: gsap.TweenTarget, direction: number) => {
+  
+  gsap.to(target, randomTime(), {
+    x: randomX(direction),
+    ease: Sine.easeInOut,
+    onComplete: moveX,
+    onCompleteParams: [target, direction * -1]
+  });
+}
+
+const moveY = (target: gsap.TweenTarget, direction: number) => {
+  
+  gsap.to(target, randomTime(), {
+    y: randomY(direction),
+    ease: Sine.easeInOut,
+    onComplete: moveY,
+    onCompleteParams: [target, direction * -1]
+  });
+}
+
 function Icons() {
   const elRef = React.useRef<HTMLImageElement[]>([]);
 
   React.useEffect(() => {
     elRef.current.forEach((icon) => {
+      gsap.set(icon, {
+        x: randomX(-1),
+        y: randomX(1),
+      });
+      
+      moveX(icon, 1);
+      moveY(icon, -1);
+
       Observer.create({
         target: icon,
         onHover: (el) => {
