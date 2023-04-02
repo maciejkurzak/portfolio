@@ -1,3 +1,3 @@
-import Navbar from "./Navbar.tsx";
+import Navbar from "./Navbar.astro";
 
 export default Navbar;

@@ -1,0 +1,25 @@
+---
+import variables from "@/styles/GlobalStyles.module.scss";
+
+const { to } = Astro.props;
+---
+
+<style define:vars={variables} lang="scss">
+  .link {
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: var(--primary);
+      }
+    }
+}
+</style>
+
+
+  <li class="link">
+    <a href={to}><slot /></a>
+  </li>

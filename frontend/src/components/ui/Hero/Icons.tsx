@@ -17,7 +17,7 @@ const SIcons = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  width: 50%;
+  width: 40%;
   z-index: 0;
   @media (max-width: 900px) {
     display: none;

@@ -1,0 +1,37 @@
+---
+import variables from "@/styles/GlobalStyles.module.scss";
+import ButtonLink from "../ButtonLink.astro";
+import Link from "./Link.astro";
+---
+
+<style define:vars={variables} lang="scss">
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--gray10);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+  }
+
+  .links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+</style>
+
+<nav class="navbar">
+  <ul class="links">
+    <Link to="/#about">About</Link>
+    <Link to="/#projects">Projects</Link>
+  </ul>
+  <ButtonLink href="/#contact" icon="message-2">
+    Get in touch
+  </ButtonLink>
+</nav>
