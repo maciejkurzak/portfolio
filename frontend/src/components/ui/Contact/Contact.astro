@@ -50,7 +50,6 @@ import { IconSend } from "@tabler/icons-react";
     }
   }
 
-
   form {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -62,7 +61,6 @@ import { IconSend } from "@tabler/icons-react";
     }
   }
 
-
   label {
     grid-column: span 2;
     display: flex;
@@ -72,7 +70,6 @@ import { IconSend } from "@tabler/icons-react";
       grid-column: span 6;
     }
   }
-
 
   input {
     grid-column: span 4;
@@ -88,7 +85,6 @@ import { IconSend } from "@tabler/icons-react";
       margin-bottom: 0.5rem;
     }
   }
-
 
   textarea {
     grid-column: span 4;
@@ -106,8 +102,7 @@ import { IconSend } from "@tabler/icons-react";
     }
   }
 
-
-  button {
+  .button {
     grid-column: 3 / span 4;
     border-radius: 100000px;
     background-color: var(--primary);
@@ -122,16 +117,11 @@ import { IconSend } from "@tabler/icons-react";
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    :hover {
+    &:hover {
       background-color: var(--primaryDark);
     }
     @media (max-width: 900px) {
       grid-column: auto / span 6;
-    }
-    svg {
-      margin-left: 0.25rem;
-      width: 1rem;
-      height: 1rem;
     }
   }
 </style>
@@ -140,16 +130,16 @@ import { IconSend } from "@tabler/icons-react";
   <div class="wrapper">
     <h2 class="title">Get in touch</h2>
     <div class="flex">
-      <form method="POST" data-netlify="true">
+      <form action="https://formspree.io/f/mvonwdqg" method="POST">
         <label>Name</label>
-        <input name="name" type="text" placeholder="Name" aria-label="Name" />
+        <input name="name" type="text" placeholder="Name" aria-label="Name" required />
         <label>Email</label>
-        <input name="email" type="email" placeholder="Email" aria-label="Email" />
+        <input name="email" type="email" placeholder="Email" aria-label="Email" required />
         <label>Message</label>
-        <textarea name="message" aria-label="Message" rows={8} />
-        <button aria-label="Send">
+        <textarea name="message" aria-label="Message" rows={8} required />
+        <button class="button" aria-label="Send">
           <span>Send</span>
-          <IconSend />
+          <IconSend style={{marginLeft: '0.25rem', width: '1rem', height: '1rem' }} />
         </button>
       </form>
       <Info client:only />
