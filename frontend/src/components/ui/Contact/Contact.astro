@@ -1,0 +1,158 @@
+---
+import variables from "@/styles/GlobalStyles.module.scss";
+import Info from "./Info";
+import { IconSend } from "@tabler/icons-react";
+---
+
+<style define:vars={variables} lang="scss">
+  .contact {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto 60px auto;
+    color: var(--gray5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 120px;
+    @media (max-width: 900px) {
+      max-width: 100%;
+      padding: 0 60px;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--gray10);
+    border-radius: 1rem;
+    padding: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: var(--gray1);
+  }
+
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 50%;
+    grid-gap: 1rem;
+    @media (max-width: 900px) {
+      width: 100%;
+      grid-gap: 0.5rem;
+    }
+  }
+
+
+  label {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    color: var(--gray1);
+    @media (max-width: 900px) {
+      grid-column: span 6;
+    }
+  }
+
+
+  input {
+    grid-column: span 4;
+    padding: 0.5rem 0.8rem;
+    outline: none;
+    border-radius: 22px;
+    border: 1px solid var(--gray5);
+    background-color: transparent;
+    color: var(--gray5);
+    font-family: inherit;
+    @media (max-width: 900px) {
+      grid-column: span 6;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+
+  textarea {
+    grid-column: span 4;
+    padding: 0.5rem 0.8rem;
+    outline: none;
+    border-radius: 22px;
+    border: 1px solid var(--gray5);
+    background-color: transparent;
+    color: var(--gray5);
+    font-family: inherit;
+    resize: none;
+    @media (max-width: 900px) {
+      grid-column: span 6;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+
+  button {
+    grid-column: 3 / span 4;
+    border-radius: 100000px;
+    background-color: var(--primary);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0.5rem 0.8rem;
+    font-family: inherit;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    :hover {
+      background-color: var(--primaryDark);
+    }
+    @media (max-width: 900px) {
+      grid-column: auto / span 6;
+    }
+    svg {
+      margin-left: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+</style>
+
+<div class="contact" id="contact">
+  <div class="wrapper">
+    <h2 class="title">Get in touch</h2>
+    <div class="flex">
+      <form method="POST" data-netlify="true">
+        <label>Name</label>
+        <input name="name" type="text" placeholder="Name" aria-label="Name" />
+        <label>Email</label>
+        <input name="email" type="email" placeholder="Email" aria-label="Email" />
+        <label>Message</label>
+        <textarea name="message" aria-label="Message" rows={8} />
+        <button aria-label="Send">
+          <span>Send</span>
+          <IconSend />
+        </button>
+      </form>
+      <Info client:only />
+    </div>
+  </div>
+</div>

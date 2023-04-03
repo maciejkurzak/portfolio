@@ -36,7 +36,7 @@ const downloadLink = await useSanityClient().fetch(`
   <Navbar />
   <Hero downloadLink={downloadLink} />
   <Projects projects={posts} client:only />
-  <Contact client:only />
+  <Contact />
   <Footer />
   <!-- {
     posts && (

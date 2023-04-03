@@ -1,3 +1,3 @@
-import Contact from "./Contact";
+import Contact from "./Contact.astro";
 
 export default Contact;
