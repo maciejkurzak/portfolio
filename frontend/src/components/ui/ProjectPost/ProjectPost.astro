@@ -2,8 +2,9 @@
 import { IconChevronLeft } from '@tabler/icons-react';
 import PortableText from "@/components/PortableText.astro";
 import Header from "./Header.astro";
+import ButtonLink from '../ButtonLink.astro';
 
-const { title, body, imageUrl } = Astro.props;
+const { title, body, imageUrl, githubUrl, url } = Astro.props;
 ---
 
 <style lang="scss">
@@ -43,6 +44,11 @@ const { title, body, imageUrl } = Astro.props;
         }
       }
 
+      .buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
       main {
         width: 100%;
         margin: 0 auto;
@@ -65,7 +71,12 @@ const { title, body, imageUrl } = Astro.props;
     </a>
 
     <Header title={title} imageUrl={imageUrl} />
-  
+
+    <div class="buttons">
+      {url && <ButtonLink href={url} target="_blank" icon="external-link" variant="solid">View Project</ButtonLink>}
+      {githubUrl && <ButtonLink href={githubUrl} target="_blank" icon="brand-github">See on GitHub</ButtonLink>}
+    </div>
+    
     <main>
       <PortableText portableText={body} />
     </main>

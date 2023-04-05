@@ -9,6 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -18,6 +19,7 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
@@ -35,6 +37,23 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'githubUrl',
+      title: 'Github URL',
+      type: 'string',
+    }),
+    defineField({
+      name: 'url',
+      title: 'URL',
+      type: 'string',
     }),
     defineField({
       name: 'tags',
@@ -46,11 +65,6 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
     }),
   ],
 

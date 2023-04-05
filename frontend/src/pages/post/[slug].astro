@@ -14,6 +14,8 @@ const fetchPost = async () => {
       title,
       body,
       description,
+      githubUrl,
+      url,
       "imageUrl": mainImage.asset->url
     }
   `);
@@ -21,7 +23,7 @@ const fetchPost = async () => {
   return post;
 };
 
-const { title, body, description, imageUrl } = await fetchPost();
+const { title, body, description, imageUrl, githubUrl, url } = await fetchPost();
 
 const seo = {
   title,
@@ -32,6 +34,6 @@ const seo = {
 
 <HtmlWrapper seo={seo}>
   <Navbar />
-  <ProjectPost title={title} body={body} imageUrl={imageUrl} />
+  <ProjectPost title={title} body={body} imageUrl={imageUrl} githubUrl={githubUrl} url={url} />
   <Footer />
 </HtmlWrapper>
